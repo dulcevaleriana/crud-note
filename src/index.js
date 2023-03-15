@@ -2,8 +2,6 @@ import app from "./app.js"
 import { Server as websockerServer } from "socket.io"
 import http from "http"
 import { connectDB } from "./db.js"
-require('dotenv').config()
-
 
 connectDB();
 const server = http.createServer(app);

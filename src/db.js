@@ -1,5 +1,5 @@
 import {connect} from 'mongoose'
-require('dotenv').config()
+import "./config"
 
 export const connectDB = async () => {
     try {
