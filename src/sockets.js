@@ -1,5 +1,5 @@
 import Notes from "./models/Notes";
-
+// here we create the CRUD process to create, read, update and delete notes
 export default (io) => {
     io.on("connection",(socket)=>{
         console.log("new user connection")
