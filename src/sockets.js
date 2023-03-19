@@ -7,16 +7,17 @@ export default (io) => {
         const emitNotes = async () =>{
             const notesList = await Notes.find()
             console.log({notesList})
-            socket.emit("loadNotes",notesList)
+            socket.emit("backend-server:loadNotes",notesList)
         }
         emitNotes();
 // here we save notes
-        socket.on("saveNote", async (infoNote) => {
+        socket.on("frontend-client:saveNote", async (infoNote) => {
             const newNote = new Notes({
                 title: infoNote.title,
                 description: infoNote.description
             })
             const saveNote = await newNote.save()
+            socket.emit("backend-server:newNote",saveNote)
 
             console.log({saveNote})
         })

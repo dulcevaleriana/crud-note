@@ -1,15 +1,17 @@
 const socket = io()
 console.log({socket})
 // here we display notes in "front-end"
-export const loadNotesFunction = () => {
-    socket.on("loadNotes",(notes) => {
-        console.log({notes})
-    })
+export const loadNotesFunction = (callBack) => {
+    socket.on("backend-server:loadNotes",callBack)
 }
 // here we send note to back-end to save it
 export const saveNotes = (title, description) => {
-    socket.emit("saveNote",{
+    socket.emit("frontend-client:saveNote",{
         title,
         description
     })
+}
+// here we recieve a new note
+export const newNote = (callBack) => {
+    socket.on("backend-server:newNote", callBack)
 }
