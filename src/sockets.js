@@ -17,7 +17,7 @@ export default (io) => {
                 description: infoNote.description
             })
             const saveNote = await newNote.save()
-            socket.emit("backend-server:newNote", saveNote)
+            io.emit("backend-server:newNote", saveNote)
 
             console.log({saveNote})
         })
