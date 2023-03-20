@@ -1,7 +1,8 @@
 import {
     saveNotes,
     loadNotesFunction,
-    newNote
+    newNote,
+    deleteNotes
 } from "./socket.js";
 
 export const ui = () => {
@@ -16,15 +17,18 @@ const oneNote = (notes) => {
             <h4>${notes.title}</h4>
             <p>${notes.description}</p>
             <button>Update</button>
-            <button>Delete</button>
+            <button class="delete" data-id="${notes._id}">Delete</button>
         </div>
     `
+    const getBtnDelete = li.querySelector(".delete")
+    getBtnDelete.addEventListener("click", e => deleteNotes(getBtnDelete.dataset.id))
     return li;
 }
 
 // see all notes list
     const renderNotes = (notes) => {
         console.log({notes})
+        noteList.innerHTML = ``
         notes.forEach(element => noteList.append(oneNote(element)));
     }
     loadNotesFunction(renderNotes);
