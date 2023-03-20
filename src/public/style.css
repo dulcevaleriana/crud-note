@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+form#noteForm {
+    display: grid;
+    gap: 20px;
+    height: max-content;
+    width: 20vw;
+}
+h1, h6 {
+    margin: 0;
+}
+.sky {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0d2b45;
+    z-index: -1;
+}
+
+.star {
+    position: absolute;
+    background-color: #fff; /* Color de las estrellas */
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: twinkle 1s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}

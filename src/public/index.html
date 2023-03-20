@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>CRUD || Socket.io</title>
 </head>
 <body>
-    <h1>App Chat</h1>
     <form id="noteForm">
+        <h1>Note App</h1>
+        <h6>With: Node.js, Express, MongoDB, Socket.io, CSS</h6>
         <input id="title" type="text"/>
         <textarea id="description" rows="3"></textarea>
         <button>Send</button>
     </form>
     <ul id="notesList"></ul>
+    <div class="sky">
+        <div class="star"></div>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./main.js" type="module"></script>
 </body>
