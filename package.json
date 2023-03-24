@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "this's a crud about notes, to proof websockets - socket.io, node js, mongodb and react",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "babel-node src/index.js"
   },

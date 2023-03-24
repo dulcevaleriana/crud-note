@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Simple-Grunge';
+    src: url('fonts/Simple-Grunge.otf') format('truetype');
+}
+html {
+    height: 100%;
+    background-color:#090a0f;
+    background: radial-gradient(ellipse at bottom, rgb(28 0 14) 64%, rgb(42 0 4) 100%);
+    overflow: hidden;
+  }
+body {
+    background:transparent;
+    font-family: 'Simple-Grunge', sans-serif;
+}
+.form-base {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+form#noteForm,
+ul#notesList {
+    background: #40000699;
+    padding: 20px;
+    border-radius: 20px;
+    display: grid;
+    gap: 10px;
+    width: 25vw;
+    color: #e8630d;
+    max-height: 315px;
+    height: 315px;
+    box-shadow: 1px 0 60px 5px #340000e0;
+}
+h1, h6 {
+    margin: 0;
+}
+input#title,
+textarea {
+    background: #31000a;
+    height: 40px;
+    padding: 0 20px;
+    border: 1px solid #e8630d;
+    color: white;
+    border-radius: 41px;
+}
+textarea#description {
+    height: 46px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+input::placeholder,
+textarea::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: #e8630d;
+}
+button {
+    background: #0d79e8;
+    color: white;
+    border: none;
+    width: 100px;
+    border-radius: 1000px;
+    padding: 10px;
+    display: flex;
+    justify-self: end;
+    justify-content: center;
+    align-items: center;
+}
+ul#notesList {
+    overflow-y: auto;
+    margin: 0;
+}
+li {
+    list-style: none;
+    background: #6e001747;
+    border-radius: 20px;
+}
+li > div {
+    display: grid;
+    grid-template-columns: auto 40px 40px;
+    grid-template-rows: auto auto;
+    padding: 20px;
+    gap: 10px;
+}
+li > div > p{
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    max-width: 100%;
+    line-break: anywhere;
+}
+li > div > button {
+    fill: white;
+    width: 40px;
+    height: 40px;
+}
+button:hover {
+    background: #1f8dfc;
+}
+li > div > button > svg {
+    width: 14px;
+}
+/* css for lam style */
+.lamp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100vh;
+    height: 100vh;
+    width: 100vw;
+    min-width: 100vw;
+    z-index:-1;
+}
+.lava{
+    filter: url("#goo");
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+}
+.blob{
+    border-radius: 50%;
+    background: #e8630a;
+    position: absolute;
+    box-shadow: 0 0 0 122px #300028c7;
+    filter: blur(4.5rem);
+}
+.blob.top{
+    border-radius: 50%;
+    width: 100% !important;
+    height: 4% !important;
+    top: -3%;
+    left:0 !important;
+}
+.blob.bottom{
+    border-radius: 50%;
+    width: 100% !important;
+    height: 4% !important;
+    bottom: -3% !important;
+    left:0;
+}
+@keyframes wobble {
+    50% {
+     border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+    }
+    100% {
+     border-radius: 38% 52% 75% 36% / 50% 40% 50% 60%;
+    }
+}
+
+/* this is the css scrollbar */
+
+
+::placeholder {
+    color:  #0c0f14;
+    opacity: 1; /* Firefox */
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:  #0c0f14;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:  #0c0f14;
+  }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background:  #0c0f14;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #e8630d;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff822f;
+}
+
