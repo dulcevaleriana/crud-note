@@ -8,17 +8,27 @@
     <title>CRUD || Socket.io</title>
 </head>
 <body>
-    <form id="noteForm">
-        <h1>Note App</h1>
-        <h6>With: Node.js, Express, MongoDB, Socket.io, CSS</h6>
-        <input id="title" type="text"/>
-        <textarea id="description" rows="3"></textarea>
-        <button>Send</button>
-    </form>
-    <ul id="notesList"></ul>
-    <div class="sky">
-        <div class="star"></div>
+    <div>
+        <form id="noteForm">
+            <h1>Note App</h1>
+            <h6>With: Node.js, Express, MongoDB, Socket.io, CSS</h6>
+            <input id="title" type="text"/>
+            <textarea id="description" rows="3"></textarea>
+            <button>Send</button>
+        </form>
+        <ul id="notesList"></ul>
     </div>
+    <footer>
+        <div class="bubbles"></div>
+    </footer>
+    <svg style="position:fixed; top:100vh;">
+        <defs>
+            <filter id="blob">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="blob" />
+            </filter>
+        </defs>
+    </svg>
     <script src="/socket.io/socket.io.js"></script>
     <script src="./main.js" type="module"></script>
 </body>

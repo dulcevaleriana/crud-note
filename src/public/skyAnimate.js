@@ -1,22 +1,25 @@
-const sky = document.querySelector('.sky');
-const numStart = 50
+const bubbles = document.querySelector('.bubbles');
+const numStart = 18
 
 // Define una función que agrega la clase 'animate' a las estrellas
 
 
 // Agrega la clase 'animate' a las estrellas después de que se cargue la página
 for(let i = 0; i < numStart; i++){
-  const star = document.createElement("div");
-  star.classList.add('star');
+  const bubble = document.createElement("div");
+  bubble.classList.add('bubble');
 
-  function animateStars() {
-    star.forEach(star => star.classList.add('twinkle'));
-  }
+  bubbles.appendChild(bubble)
+  // bubble.style.size = `${2+Math.random()*4}rem`;
+  // bubble.style.distance = `${6+Math.random()*4}rem`;
+  // bubble.style.position = `${-5+Math.random()*110}%`;
+  // bubble.style.time = `${2+Math.random()*2}s`;
+  // bubble.style.delay = `${-1*(2+Math.random()*2)}s`;
 
-  sky.appendChild(star)
-  star.style.left = `${Math.random() * 100}%`;
-  star.style.top = `${Math.random() * 100}%`;
-
-  window.addEventListener('load', animateStars);
+  bubble.style.setProperty("--size", `${2+Math.random()*4}rem`);
+  bubble.style.setProperty("--distance", `${6+Math.random()*4}rem`);
+  bubble.style.setProperty("--position", `${-5+Math.random()*110}%`);
+  bubble.style.setProperty("--time", `${2+Math.random()*2}s`);
+  bubble.style.setProperty("--delay", `${-1*(2+Math.random()*2)}s`);
 }
 
